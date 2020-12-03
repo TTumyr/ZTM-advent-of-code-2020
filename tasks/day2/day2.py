@@ -31,10 +31,8 @@ def day2():
     def init():
         valid_passwords = find_valid_passwords(
             string_split(password_db_string))
-        print(f""" \nDay 2 solution
-        ==============================================
-        Solution -- Part One: {len(valid_passwords[0])}
-        Solution -- Part Two: {len(valid_passwords[1])} """)
+        print(
+            f"""\nDay 2\n==============================================\nSolution -- Part One: {len(valid_passwords[0])}\nSolution -- Part Two: {len(valid_passwords[1])} """)
     init()
 
 
