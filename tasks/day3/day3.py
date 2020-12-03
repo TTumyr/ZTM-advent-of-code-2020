@@ -5,24 +5,24 @@ def day2():
     def string_split(pw_string):
         return pw_string.split()
 
-    def calculate_path(map, travel_step=[3, 1]):
+    def calculate_path(travel_map, travel_step=[3, 1]):
         trees_encountered = 0
         start_pos_x = 0
         pos_x = start_pos_x
 
-        for row in range(0, len(map), travel_step[1]):
-            if(pos_x > len(map[row])-1):
-                pos_x -= len(map[row])
-            if(map[row][pos_x] == "#"):
+        for row in range(0, len(travel_map), travel_step[1]):
+            if(pos_x > len(travel_map[row])-1):
+                pos_x -= len(travel_map[row])
+            if(travel_map[row][pos_x] == "#"):
                 trees_encountered += 1
             pos_x += travel_step[0]
         return trees_encountered
 
-    def all_paths(map):
+    def all_paths(travel_map):
         trees_encountered = []
         travel_steps = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]]
         for path in travel_steps:
-            path_result = calculate_path(map, path)
+            path_result = calculate_path(travel_map, path)
             trees_encountered.append(path_result)
         return trees_encountered
 
