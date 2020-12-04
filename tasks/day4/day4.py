@@ -37,27 +37,8 @@ def day4():
         for p_port in passports[0]:
             check_list = []
             for field in p_port:
-                if(field.split(":")[0] == "byr"):
-                    if(re.search(validity_rules["byr"], field.split(":")[1])):
-                        check_list.append("byr")
-                if(field.split(":")[0] == "iyr"):
-                    if(re.search(validity_rules["iyr"], field.split(":")[1])):
-                        check_list.append("iyr")
-                if(field.split(":")[0] == "eyr"):
-                    if(re.search(validity_rules["eyr"], field.split(":")[1])):
-                        check_list.append("eyr")
-                if(field.split(":")[0] == "hgt"):
-                    if(re.search(validity_rules["hgt"], field.split(":")[1])):
-                        check_list.append("hgt")
-                if(field.split(":")[0] == "hcl"):
-                    if(re.search(validity_rules["hcl"], field.split(":")[1])):
-                        check_list.append("hcl")
-                if(field.split(":")[0] == "ecl"):
-                    if(re.search(validity_rules["ecl"], field.split(":")[1])):
-                        check_list.append("ecl")
-                if(field.split(":")[0] == "pid"):
-                    if(re.search(validity_rules["pid"], field.split(":")[1])):
-                        check_list.append("pid")
+                if(field.split(":")[0] in validity_rules and re.search(validity_rules[field.split(":")[0]], field.split(":")[1])):
+                    check_list.append(field.split(":")[0])
             if(len(check_list) >= 8 or (len(check_list) >= 7 and not any("cid" in check for check in check_list))):
                 improved_passports.append(p_port)
                 improved_passports_count += 1
