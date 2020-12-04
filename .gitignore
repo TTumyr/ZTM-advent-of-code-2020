@@ -3,3 +3,4 @@ __init__*
 advent*
 tasks.py
 *_gi_*
+.vscode

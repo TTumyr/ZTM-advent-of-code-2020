@@ -1,7 +1,7 @@
 from data import data_text_string
 
 
-def day2():
+def day3():
     def string_split(pw_string):
         return pw_string.split()
 
@@ -9,7 +9,6 @@ def day2():
         trees_encountered = 0
         start_pos_x = 0
         pos_x = start_pos_x
-
         for row in range(0, len(travel_map), travel_step[1]):
             if(pos_x > len(travel_map[row])-1):
                 pos_x -= len(travel_map[row])
@@ -41,4 +40,4 @@ def day2():
     init()
 
 
-day2()
+day3()
