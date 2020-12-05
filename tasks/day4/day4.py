@@ -42,12 +42,12 @@ def day4():
             if(len(check_list) >= 8 or (len(check_list) >= 7 and not any("cid" in check for check in check_list))):
                 improved_passports.append(p_port)
                 improved_passports_count += 1
-        return improved_passports, improved_passports_count, passports[1]
+        return improved_passports, improved_passports_count, passports[0], passports[1]
 
     def init():
         result = improved_validity_check(
             simple_validity_check(convert_txt_to_data(data_txt)))
-        part_one = result[2]
+        part_one = result[3]
         part_two = result[1]
         print(
             f"\nDay 4\n======\nSolution -- Part One: {part_one}\nSolution -- Part Two: {part_two}")
